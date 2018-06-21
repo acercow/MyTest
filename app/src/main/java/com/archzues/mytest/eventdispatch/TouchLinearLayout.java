@@ -6,12 +6,16 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.archzues.mytest.R;
 
 /**
  * Created by acercow on 18-6-6.
  */
 
 public class TouchLinearLayout extends LinearLayout implements View.OnTouchListener, View.OnClickListener {
+
     public TouchLinearLayout(Context context) {
         super(context);
         init();
@@ -29,31 +33,39 @@ public class TouchLinearLayout extends LinearLayout implements View.OnTouchListe
 
     private void init() {
         $Log.w(this, "=====<init>=====");
+
+
 //        setOnTouchListener(this);
 //        setOnClickListener(this);
     }
 
     @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+
+    }
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        $Log.d(this, "onInterceptTouchEvent -> " + ev);
+        $Log.d(this, "onInterceptTouchEvent -> "+ ev.getAction());
         return super.onInterceptTouchEvent(ev);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        $Log.d(this, "dispatchTouchEvent -> " + ev);
+        $Log.d(this, "dispatchTouchEvent -> "+ ev.getAction());
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        $Log.d(this, "onTouchEvent -> " + event);
+        $Log.d(this, "onTouchEvent -> " + event.getAction());
         return super.onTouchEvent(event);
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        $Log.d(this, "onTouch -> " + event);
+        $Log.d(this, "onTouch -> " + event.getAction());
         return false;
     }
 

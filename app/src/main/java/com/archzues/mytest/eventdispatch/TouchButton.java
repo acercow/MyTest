@@ -42,20 +42,20 @@ public class TouchButton extends AppCompatButton implements View.OnTouchListener
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        $Log.v(this, "dispatchTouchEvent -> " + event);
+        $Log.v(this, "dispatchTouchEvent -> " + event.getAction());
         return super.dispatchTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        $Log.v(this, "onTouchEvent -> " + event);
+        $Log.v(this, "onTouchEvent -> " + event.getAction());
         return super.onTouchEvent(event);
 //        return false;
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        $Log.v(this, "onTouch -> " + event);
+        $Log.v(this, "onTouch -> " + event.getAction());
         return false;
     }
 

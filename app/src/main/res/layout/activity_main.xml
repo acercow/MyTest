@@ -3,8 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.archzues.mytest.MainActivity">
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#333"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@+id/text_log"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#EEE"
+                android:textSize="12sp" />
+
+        </HorizontalScrollView>
+
+
+    </ScrollView>
+
+    <com.archzues.mytest.eventdispatch.TouchLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="0"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <com.archzues.mytest.eventdispatch.TouchButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn"
+            android:text="touch" />
+
+    </com.archzues.mytest.eventdispatch.TouchLinearLayout>
 
 </LinearLayout>
