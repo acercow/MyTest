@@ -1,0 +1,66 @@
+package com.archzues.mytest.eventdispatch;
+
+import android.content.Context;
+import android.support.v7.widget.AppCompatButton;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+
+/**
+ * Created by acercow on 18-6-6.
+ */
+
+public class TouchButton extends AppCompatButton implements View.OnTouchListener, View.OnClickListener {
+    public TouchButton(Context context) {
+        super(context);
+        init();
+    }
+
+    public TouchButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public TouchButton(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+
+    private void init() {
+        $Log.w(this, "=====<init>=====");
+        setOnTouchListener(this);
+        setOnClickListener(this);
+//        setEnabled(false);
+//        setClickable(true);
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        super.onAttachedToWindow();
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        $Log.v(this, "dispatchTouchEvent -> " + event);
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        $Log.v(this, "onTouchEvent -> " + event);
+        return super.onTouchEvent(event);
+//        return false;
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        $Log.v(this, "onTouch -> " + event);
+        return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        $Log.v(this, "onClick -> " + v);
+    }
+}
