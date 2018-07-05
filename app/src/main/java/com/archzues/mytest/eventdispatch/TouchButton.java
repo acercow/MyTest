@@ -28,8 +28,8 @@ public class TouchButton extends AppCompatButton implements View.OnTouchListener
 
     private void init() {
         $Log.w(this, "=====<init>=====");
-        setOnTouchListener(this);
-        setOnClickListener(this);
+//        setOnTouchListener(this);
+//        setOnClickListener(this);
 //        setEnabled(false);
 //        setClickable(true);
     }
@@ -46,7 +46,7 @@ public class TouchButton extends AppCompatButton implements View.OnTouchListener
                 break;
 
             case MotionEvent.ACTION_MOVE:
-                getParent().requestDisallowInterceptTouchEvent(true);
+//                getParent().requestDisallowInterceptTouchEvent(true);
                 break;
 
             default:
@@ -60,8 +60,8 @@ public class TouchButton extends AppCompatButton implements View.OnTouchListener
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         $Log.v(this, "onTouchEvent -> " + event.getAction());
-        return super.onTouchEvent(event);
-//        return false;
+//        return super.onTouchEvent(event);
+        return false;
     }
 
     @Override

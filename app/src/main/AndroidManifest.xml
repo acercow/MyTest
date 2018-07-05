@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".eventdispatch.HorizontalActivity"></activity>
+        <activity android:name=".eventdispatch.TouchActivity"></activity>
     </application>
 
 </manifest>

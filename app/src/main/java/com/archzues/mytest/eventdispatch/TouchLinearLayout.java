@@ -60,7 +60,14 @@ public class TouchLinearLayout extends LinearLayout implements View.OnTouchListe
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         $Log.d(this, "onTouchEvent -> " + event.getAction());
-        return super.onTouchEvent(event);
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                return true;
+            case MotionEvent.ACTION_MOVE:
+                return false;
+        }
+        return true;
+//     return super.onTouchEvent(event);
     }
 
     @Override

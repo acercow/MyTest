@@ -32,7 +32,7 @@ public class HorizontalActivity extends AppCompatActivity {
         mListContainer = findViewById(R.id.container);
         for (int i = 0; i < 3; i++) {
             ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.content_layout, mListContainer, false);
-            layout.getLayoutParams().width = 2000;
+            layout.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
             TextView textView = layout.findViewById(R.id.title);
             textView.setText("[Page]: " + (i + 1));
             layout.setBackgroundColor(Color.rgb(255/(i + 1), 255/(i + 1), 0));
@@ -50,4 +50,5 @@ public class HorizontalActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
     }
+
 }
