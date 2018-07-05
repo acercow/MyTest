@@ -36,12 +36,23 @@ public class TouchButton extends AppCompatButton implements View.OnTouchListener
 
     @Override
     protected void onAttachedToWindow() {
-        getParent().requestDisallowInterceptTouchEvent(true);
         super.onAttachedToWindow();
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                break;
+
+            case MotionEvent.ACTION_MOVE:
+                getParent().requestDisallowInterceptTouchEvent(true);
+                break;
+
+            default:
+                break;
+
+        }
         $Log.v(this, "dispatchTouchEvent -> " + event.getAction());
         return super.dispatchTouchEvent(event);
     }

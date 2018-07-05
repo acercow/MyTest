@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.archzues.mytest.MainActivity">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="300dp"
+        android:visibility="gone"
+        android:background="@color/colorAccent"
+        android:layout_height="400dp"
+        android:orientation="vertical">
+        <com.archzues.mytest.eventdispatch.VelocityView
+            android:id="@+id/velocity"
+            android:background="@color/colorPrimary"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+        </com.archzues.mytest.eventdispatch.VelocityView>
+
+        <Button
+            android:id="@+id/btn_scroll"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#333"
-        android:layout_weight="1"
-        android:fillViewport="true">
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true">
-
-            <TextView
-                android:id="@+id/text_log"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textColor="#EEE"
-                android:textSize="12sp" />
-
-        </HorizontalScrollView>
+    </LinearLayout>
 
 
-    </ScrollView>
+<com.archzues.mytest.eventdispatch.MyViewPager
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <com.archzues.mytest.eventdispatch.TouchLinearLayout
+    <Button
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_weight="0"
-        android:gravity="bottom"
-        android:orientation="vertical">
+        android:text="This is first child view"/>
 
-        <com.archzues.mytest.eventdispatch.TouchButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn"
-            android:text="touch" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="This is second child view"/>
 
-    </com.archzues.mytest.eventdispatch.TouchLinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="This is third child view"/>
+
+</com.archzues.mytest.eventdispatch.MyViewPager>
 
 </LinearLayout>

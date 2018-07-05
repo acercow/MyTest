@@ -1,5 +1,6 @@
 package com.archzues.mytest.eventdispatch;
 
+import android.text.Spannable;
 import android.util.Log;
 import android.widget.TextView;
 
