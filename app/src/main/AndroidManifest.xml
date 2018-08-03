@@ -6,8 +6,11 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,8 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".eventdispatch.HorizontalActivity"></activity>
-        <activity android:name=".eventdispatch.TouchActivity"></activity>
+        <activity android:name=".eventdispatch.HorizontalActivity" />
+        <activity android:name=".eventdispatch.TouchActivity" />
+        <activity android:name=".ipc.SecondActivity"
+            android:process=":remote"/>
+        <activity android:name=".ipc.ThirdActivity" />
     </application>
 
 </manifest>
