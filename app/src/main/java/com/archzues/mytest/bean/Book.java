@@ -1,4 +1,4 @@
-package com.archzues.mytest;
+package com.archzues.mytest.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

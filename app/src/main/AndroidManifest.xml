@@ -36,9 +36,15 @@
 
         <service
             android:name=".ipc.messenger.MessengerService"
-            android:process=":remote_messenger_service" />
+            android:process=":remote_messenger" />
 
-        <activity android:name=".ipc.messenger.MessengerClientActivity"></activity>
+        <activity android:name=".ipc.messenger.MessengerClientActivity" />
+
+        <service
+            android:name=".ipc.normal.BookManageService"
+            android:enabled="false"
+            android:exported="false"
+            android:process=":remote_book_manager"></service>
     </application>
 
 </manifest>
