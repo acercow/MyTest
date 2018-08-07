@@ -29,9 +29,16 @@
         </activity>
         <activity android:name=".eventdispatch.HorizontalActivity" />
         <activity android:name=".eventdispatch.TouchActivity" />
-        <activity android:name=".ipc.SecondActivity"
-            android:process=":remote"/>
+        <activity
+            android:name=".ipc.SecondActivity"
+            android:process=":remote" />
         <activity android:name=".ipc.ThirdActivity" />
+
+        <service
+            android:name=".ipc.messenger.MessengerService"
+            android:process=":remote_messenger_service" />
+
+        <activity android:name=".ipc.messenger.MessengerClientActivity"></activity>
     </application>
 
 </manifest>

@@ -21,9 +21,11 @@ public class ThirdActivity extends AppCompatActivity {
         Log.i("ipc", "ThirdActivity id : " + UserManager.sUserId);
 
         User user = new User(1112, "zhaosen", true);
+
 //        serialize(user);
 //        User result = deSerialize();
 //        Log.i("ipc", "ThirdActivity deSerialize: " + result.getUserName());
+
 
     }
 
