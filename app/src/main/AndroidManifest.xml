@@ -41,10 +41,10 @@
         <activity android:name=".ipc.messenger.MessengerClientActivity" />
 
         <service
-            android:name=".ipc.normal.BookManageService"
-            android:enabled="false"
-            android:exported="false"
-            android:process=":remote_book_manager"></service>
+            android:name=".ipc.normal.BookManagerService"
+            android:process=":remote_book_manager" />
+
+        <activity android:name=".ipc.normal.BookMangerActivity"></activity>
     </application>
 
 </manifest>

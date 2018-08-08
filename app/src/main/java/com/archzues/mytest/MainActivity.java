@@ -5,14 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.archzues.mytest.ipc.messenger.MessengerClientActivity;
+import com.archzues.mytest.ipc.normal.BookMangerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startActivity(new Intent(this, MessengerClientActivity.class));
+        startActivity(new Intent(this, BookMangerActivity.class));
         finish();
         setContentView(R.layout.activity_main);
 

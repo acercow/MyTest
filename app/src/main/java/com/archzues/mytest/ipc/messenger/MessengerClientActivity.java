@@ -5,11 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.archzues.mytest.R;
 
@@ -24,6 +26,7 @@ public class MessengerClientActivity extends AppCompatActivity {
             bundle.putString("msg", "zhaosen");
             Message msg = Message.obtain(null, MSG_FROM_CLIENT);
             msg.setData(bundle);
+            msg.replyTo = mGetReplyMessenger;
             try {
                 messenger.send(msg);
             } catch (RemoteException e) {
@@ -36,6 +39,22 @@ public class MessengerClientActivity extends AppCompatActivity {
 
         }
     };
+
+    private final Messenger mGetReplyMessenger = new Messenger(new GetReplyHandler());
+
+    private static class GetReplyHandler extends Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MessengerService.MSG_FROM_SERVER:
+                    Bundle bundle = msg.getData();
+                    Log.i("ipc", "Reply: " + bundle.getString("reply"));
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
