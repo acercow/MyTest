@@ -1,7 +1,6 @@
 package com.archzues.mytest;
 
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -44,11 +43,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent("aaaa");
-        intent.setPackage("com.example.acercow.myapplication");
+        startActivity(new Intent(this, ProviderActivity.class));
+        finish();
+
+//        Intent intent = new Intent("aaaa");
+//        intent.setPackage("com.example.acercow.myapplication");
 //        intent.setClassName("com.example.acercow.myapplication", "com.example.acercow.myapplication.GenFellowService");
 //        intent.setComponent(new ComponentName("com.example.acercow.myapplication", "com.example.acercow.myapplication.GenFellowService"));
-        bindService(intent, mConn, Context.BIND_AUTO_CREATE);
+//        bindService(intent, mConn, Context.BIND_AUTO_CREATE);
 
 
 //        LocalBroadcastManager.getInstance(this).registerReceiver(new BroadcastReceiver() {
@@ -85,6 +87,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unbindService(mConn);
+//        unbindService(mConn);
     }
 }
