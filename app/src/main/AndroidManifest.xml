@@ -50,9 +50,16 @@
         <provider
             android:name=".contentprovider.BookProvider"
             android:authorities="tk.acercow.book.provider"
-            android:process=":provider"/>
+            android:process=":provider" />
 
-        <activity android:name=".ProviderActivity"></activity>
+        <activity android:name=".ProviderActivity" />
+
+        <service
+            android:name=".socket.TCPServerService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ClientActivity"></activity>
     </application>
 
 </manifest>
