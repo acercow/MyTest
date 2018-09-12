@@ -59,7 +59,12 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ClientActivity"></activity>
+        <service android:name=".binderpool.BinderPoolService"
+            android:process=":binder_pool"/>
+
+        <activity android:name=".ClientActivity" />
+        <activity android:name=".binderpool.BinderPoolTestActivity"></activity>
+
     </application>
 
 </manifest>

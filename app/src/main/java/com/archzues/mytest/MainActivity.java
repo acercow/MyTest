@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.archzues.mytest.binderpool.BinderPoolTestActivity;
 import com.example.acercow.myapplication.IOnNewFellowListener;
 import com.example.acercow.myapplication.IUserManager;
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this, ProviderActivity.class));
+        startActivity(new Intent(this, BinderPoolTestActivity.class));
         finish();
 
 //        Intent intent = new Intent("aaaa");
